@@ -1,0 +1,45 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "TypeScript React Template Website",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "tslint": "^5.12.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack-dev-middleware": "^3.5.2",
+    "webpack-cli": "^3.2.3",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack": "^4.29.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "css-loader": "^2.1.0",
+    "express": "^4.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "style-loader": "^0.23.1"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --mode=production",
+    "start": "npm run build && node ./src/backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "./node_modules/bin/rimraf lib"
+  },
+  "keywords": [
+    "typescript",
+    "react",
+    "source",
+    "mapping",
+    "hot",
+    "module",
+    "reload",
+    "webpack",
+    "website"
+  ],
+  "author": "David Burke",
+  "license": "See license in LICENSE.MD"
+}
