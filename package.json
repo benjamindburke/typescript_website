@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "typescript-website",
   "version": "1.0.0",
   "description": "TypeScript React Template Website",
   "main": "webpack.config.js",
@@ -40,6 +40,10 @@
     "webpack",
     "website"
   ],
-  "author": "David Burke",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benjamindburke/typescript_website"
+  },
+  "author": "David Burke <benjamindburke@gmail.com> (https://github.com/benjamindburke)",
   "license": "MIT"
 }
