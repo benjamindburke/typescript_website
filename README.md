@@ -1,7 +1,7 @@
 # TypeScript Website
 
 This is a template website using React TypeScript, Webpack hot module loading, and source mapping.
-This project is configured to include CSS and SVG files in webpack.
+This project is configured to include CSS files in webpack.
 
 ## Getting Started
 
