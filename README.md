@@ -14,8 +14,8 @@ git clone https://github.com/benjamindburke/typescript_website.git
 
 Install the following on your respective machine:
 
-[Node](https://nodejs.org/en/) - Node JS
-[NPM](https://npmjs.com/) - Node Package Manager, included with Node JS
+* [Node](https://nodejs.org/en/) - Node JS
+* [NPM](https://npmjs.com/) - Node Package Manager, included with Node JS
 
 Ensure both are installed on your machine by opening a terminal session and entering
 ```
@@ -49,10 +49,6 @@ Place backend/server code inside the [src/backend](src/backend) folder.
 ### Using CSS files
 
 Follow the example set in [App.tsx](src/frontend/App.tsx).
-
-### Using SVG files
-
-Follow the example set in [Hello.tsx](src/frontend/components/Hello.tsx).
 
 ### Installing new npm modules
 
