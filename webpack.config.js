@@ -29,12 +29,7 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                loader: ['style-loader', 'css-loader']
-            },
-            {
-                test:/\.svg$/,
-                include: path.join(__dirname, 'icons'),
-                loader: 'svg-inline-loader'
+                loader: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
