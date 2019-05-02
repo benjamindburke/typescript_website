@@ -1,0 +1,10 @@
+// Workspace settings
+{
+  "files.exclude": { // Hides specified files from the sidebar in the editor
+    "**/.vscode": true,
+    "**/node_modules": true,
+  },
+  "editor.insertSpaces": true, // Sets tabs to insert space characters instead of tab characters
+  "editor.detectIndentation": false, // Forces editor to use specified tab size
+  "editor.tabSize": 2 // Specified tab size
+}

@@ -1,40 +1,82 @@
 const path = require('path'),
-    webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+  webpack = require('webpack'),
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: ['./src/frontend/App.tsx', 'webpack-hot-middleware/client'],
-        vendor: ['react', 'react-dom']
-    },
-    output: {
-        path: path.resolve(__dirname, 'lib'),
-        publicPath: 'http://localhost:3000/',
-        filename: 'js/[name].bundle.js'
-    },
-    devtool: 'source-map',
-    resolve: {
-        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                loader: 'ts-loader'
-            },
-            { 
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'source-map-loader'
-            },
-            {
-                test: /\.s?css$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader']
-            }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') }),
-        new webpack.HotModuleReplacementPlugin()
+  entry: [
+    './src/index.tsx',
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:9799'
+  ],
+  mode: 'development',
+  output: {
+    path: path.resolve(__dirname, 'lib'),
+    publicPath: 'http://localhost:9799/assets/', // directory for all packed files relative to the server home page
+    filename: 'bundle.js',
+    library: 'PlaylistPerfect',
+    libraryTarget: 'umd'
+  },
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.json', '.ts', '.tsx', '.html', '.scss', '.css'],
+    modules: [
+      path.resolve(__dirname, 'src'),
+      './node_modules'
     ]
-}
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        include: [
+          path.resolve(__dirname, 'src')
+        ],
+        exclude: [
+          path.resolve(__dirname, 'test')
+        ]
+      },
+      { 
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
+  devServer: {
+    compress: true,
+    historyApiFallback: true,
+    noInfo: false,
+    port: 9799,
+    hot: true,
+    contentBase: './src',
+    quiet: false,
+  },
+  stats: {
+    colors: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      inject: false,
+      title: 'PlaylistPerfect for Spotify',
+      filename: 'index.html',
+      template: 'src/index.html'
+    })
+  ]
+};

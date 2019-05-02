@@ -1,35 +1,42 @@
 {
-  "name": "typescript-website",
-  "version": "1.0.0",
+  "name": "template-typescript-website",
+  "version": "0.0.2",
   "description": "TypeScript React Template Website",
-  "main": "webpack.config.js",
+  "main": "src/index.tsx",
   "dependencies": {
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/request": "^2.48.1",
+    "@types/webpack": "^4.4.25",
+    "css-loader": "^2.1.1",
+    "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "proxy-middleware": "^0.15.0",
+    "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
     "tslint": "^5.12.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.3",
-    "webpack-dev-middleware": "^3.5.2",
+    "url": "^0.11.0",
+    "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
-    "webpack-hot-middleware": "^2.24.3",
-    "webpack": "^4.29.3"
-  },
-  "devDependencies": {
-    "@types/react": "^16.8.2",
-    "@types/react-dom": "^16.8.0",
-    "css-loader": "^2.1.0",
-    "express": "^4.16.4",
-    "node-sass": "^4.11.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-dev-server": "^3.3.1"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack --mode=production",
-    "start": "npm run build && node ./src/backend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "./node_modules/bin/rimraf lib"
+    "build": "npm run clean && webpack --env.platform=server --config webpack.config.js",
+    "start": "npm run build && webpack-dev-server --open --config webpack.config.js",
+    "clean": "rimraf lib",
+    "bomb": "rimraf node_modules && npm i"
   },
   "keywords": [
     "typescript",
@@ -40,12 +47,15 @@
     "module",
     "reload",
     "webpack",
-    "website"
+    "website",
+    "sass",
+    "scss",
+    "css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/benjamindburke/typescript_website"
+  "author": {
+    "name": "Ben Burke",
+    "email": "benjamindburke@gmail.com",
+    "url": "https://github.com/benjamindburke"
   },
-  "author": "David Burke <benjamindburke@gmail.com> (https://github.com/benjamindburke)",
   "license": "MIT"
 }

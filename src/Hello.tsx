@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./Hello.scss";
 
 interface Props {
   compiler: string,
