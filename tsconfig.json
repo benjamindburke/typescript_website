@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./lib/",
+    "baseUrl": "./src",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
