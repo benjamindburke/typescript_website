@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     publicPath: 'http://localhost:9799/assets/', // directory for all packed files relative to the server home page
     filename: 'bundle.js',
-    library: 'PlaylistPerfect',
+    library: 'typescript_website',
     libraryTarget: 'umd'
   },
   devtool: 'source-map',
@@ -74,7 +74,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
-      title: 'PlaylistPerfect for Spotify',
+      title: 'Typescript Template Website',
       filename: 'index.html',
       template: 'src/index.html'
     })
